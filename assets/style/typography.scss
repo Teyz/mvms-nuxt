@@ -1,0 +1,18 @@
+html {
+  font-family: "Montserrat";
+}
+
+@mixin typo-title {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+@mixin typo-text-mobile {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+@mixin typo-text {
+  font-weight: 500;
+  font-size: 24px;
+}

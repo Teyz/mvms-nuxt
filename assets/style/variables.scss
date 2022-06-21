@@ -1,0 +1,25 @@
+$primary: #ebb23a;
+$secondary: #fafbfe;
+
+@mixin above($arg) {
+  $width: "";
+  @if $arg == "xsmall" {
+    $width: 540px;
+  }
+  @if $arg == "small" {
+    $width: 720px;
+  }
+  @if $arg == "medium" {
+    $width: 940px;
+  }
+  @if $arg == "big" {
+    $width: 1200px;
+  }
+  @if $arg == "large" {
+    $width: 1440px;
+  }
+
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
