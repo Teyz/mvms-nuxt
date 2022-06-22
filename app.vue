@@ -4,6 +4,7 @@
     <Hero />
     <BoxJourney />
     <OurBox />
+    <Reviews />
     <Reinsurence />
     <Footer />
   </div>
