@@ -2,7 +2,7 @@ body {
   background-color: $secondary;
 }
 
-.btn {
+.button {
   background-color: #de8e00;
   color: white;
   border-radius: 8px;
@@ -13,4 +13,5 @@ body {
   width: 100%;
   padding: 10px 0;
   max-width: 425px;
+  cursor: pointer;
 }

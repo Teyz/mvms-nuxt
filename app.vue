@@ -1,7 +1,10 @@
 <template>
   <div>
-    <Hero />
-    <BoxJourney />
+    <div id="app">
+      <Hero />
+      <BoxJourney />
+      <OurBox />
+    </div>
   </div>
 </template>
 
