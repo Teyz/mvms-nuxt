@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import getOurBox from "./ourBox";
+import getOurBox from "./ourBoxList";
 
 export default defineComponent({
   name: "OurBox",
