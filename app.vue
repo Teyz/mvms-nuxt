@@ -1,8 +1,11 @@
 <template>
   <div>
+    <Navbar />
     <Hero />
     <BoxJourney />
     <OurBox />
+    <Reinsurence />
+    <Footer />
   </div>
 </template>
 
