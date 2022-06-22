@@ -15,9 +15,18 @@
       <h2>Qu’avez-vous pensé de <span>Goûts Malins</span> ?</h2>
       <hr class="orangeLine" />
       <div class="modalForm">
-        <input type="text" placeholder="nom" />
-        <input type="text" placeholder="prénom" />
-        <input type="text" placeholder="review" />
+        <div class="inputName">
+          <input type="text" placeholder="Nom*" />
+          <input type="text" placeholder="Prénom*" />
+        </div>
+        <textarea
+          rows=""
+          cols=""
+          placeholder="Pour vous aider :
+- Expliquez-nous pourquoi vous avez mis cette note ?
+- Qu’avez-vous préféré de cette boutique ?
+- La recommanderiez-vous à vos proches ?"
+        ></textarea>
         <button class="button">Publier votre avis</button>
       </div>
     </div>
@@ -124,6 +133,35 @@ export default defineComponent({
     @include typo-title;
     font-size: 26px;
     margin: 12px 0;
+  }
+  input {
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 1px solid #b2b8d4;
+    border-radius: 8px;
+  }
+  .inputName {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 16px;
+    input {
+      box-sizing: border-box;
+      background: #ffffff;
+      border: 1px solid #b2b8d4;
+      border-radius: 8px;
+      width: 260px;
+      height: 40px;
+    }
+  }
+  textarea {
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 1px solid #b2b8d4;
+    border-radius: 8px;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 16px;
   }
 }
 </style>
