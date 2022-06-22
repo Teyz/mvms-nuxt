@@ -110,7 +110,7 @@
                       width="42"
                       height="42"
                       class="my-auto"
-                      src="/assets/header/green_number-9eb0255fbb106a35a71aa11d788a50096f10cb1965b5a0dc550160707067b46c.png"
+                      src="../assets/img/avatar-header.png"
                     />
                   </div>
                   <div>
@@ -237,8 +237,3 @@
     </div>
   </nav>
 </template>
-
-<style lang="scss" scoped>
-@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css");
-@import url("https://www.mavillemonshopping.fr/assets/application-e03bb029004143797ff1e8be4d7c0c1a55952bed46e768e81d3a347a2236836f.css");
-</style>

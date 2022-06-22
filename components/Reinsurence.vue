@@ -33,7 +33,3 @@
     </div>
   </section>
 </template>
-<style lang="scss" scoped>
-@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css");
-@import url("https://www.mavillemonshopping.fr/assets/application-e03bb029004143797ff1e8be4d7c0c1a55952bed46e768e81d3a347a2236836f.css");
-</style>
