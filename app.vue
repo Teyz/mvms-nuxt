@@ -1,7 +1,9 @@
 <template>
   <div>
     <Navbar />
-    <div id="app"><Hero /> <BoxJourney /></div>
+    <Hero />
+    <BoxJourney />
+    <OurBox />
     <Reinsurence />
     <Footer />
   </div>

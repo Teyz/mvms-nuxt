@@ -13,7 +13,7 @@
       />
     </div>
     <div class="buttonRoot">
-      <button class="btn">Découvrir</button>
+      <button class="button">Découvrir</button>
     </div>
   </section>
 </template>
