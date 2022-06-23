@@ -1,70 +1,72 @@
 <template>
   <div class="modalStepRoot" ref="target">
-    <img
-      src="@/assets/img/svg/close.svg"
-      alt=""
-      class="closeIcon"
-      @click="closeModal"
-    />
-    <div class="titleRoot">Épicerie</div>
-    <div class="modalStepContent">
-      <div class="modalStepMain">
-        <div class="modalStepHeader">
-          <img
-            src="@/assets/img/avatar-cityzen-fond-blanc.png"
-            alt=""
-            class="avatar"
-          />
-          <div class="modalReviews">
-            <h2>Goûts Malins</h2>
-            <p>...</p>
-            <img src="@/assets/img/reviews.png" alt="" class="reviews" />
+    <div class="modalStepContainer">
+      <img
+        src="@/assets/img/svg/close.svg"
+        alt=""
+        class="closeIcon"
+        @click="closeModal"
+      />
+      <div class="titleRoot">Épicerie</div>
+      <div class="modalStepContent">
+        <div class="modalStepMain">
+          <div class="modalStepHeader">
             <img
-              src="@/assets/img/reviews-left.png"
+              src="@/assets/img/avatar-cityzen-fond-blanc.png"
               alt=""
-              class="reviews-left"
+              class="avatar"
+            />
+            <div class="modalReviews">
+              <h2>Goûts Malins</h2>
+              <p>...</p>
+              <img src="@/assets/img/reviews.png" alt="" class="reviews" />
+              <img
+                src="@/assets/img/reviews-left.png"
+                alt=""
+                class="reviews-left"
+              />
+            </div>
+            <button class="button">Voir plus de produits</button>
+          </div>
+          <div class="imageRoot">
+            <img
+              src="@/assets/img/etalage-saucissons.png"
+              alt=""
+              class="saucissonImage"
+            />
+            <img
+              src="@/assets/img/etalage-saucissons-planche.png"
+              alt=""
+              class="saucissonImage second"
             />
           </div>
-          <button class="button">Voir plus de produits</button>
+          <p class="description">
+            Les box personnalisées sont une nouvelle façon de vivre une
+            expérience avec vos commerçants. C’est un moyen pour les
+            consommateurs de découvrir de nouveaux produits et de se sentir plus
+            proches de leurs marques préférées. Les box personnalisées offrent
+            également aux commerçants une plateforme pour présenter leurs
+            produits d’une manière unique et engageante. Les boxes
+            personnalisées sont une nouvelle façon de vivre une expérience avec
+            vos commerçants. Elles permettent aux consommateurs de recevoir des
+            produits et services sur mesure, selon leurs besoins et goûts.
+          </p>
         </div>
-        <div class="imageRoot">
+        <div class="divider"></div>
+        <div class="modalStepMain modalStepDescription">
+          <p class="description">Dans votre box</p>
           <img
-            src="@/assets/img/etalage-saucissons.png"
+            src="@/assets/img/saucissons-au-choix.png"
             alt=""
             class="saucissonImage"
           />
-          <img
-            src="@/assets/img/etalage-saucissons-planche.png"
-            alt=""
-            class="saucissonImage"
-          />
+          <div class="title">
+            <img src="@/assets/img/svg/home.svg" alt="" />
+            <p>Goûts Malins</p>
+          </div>
+          <h3>Saucissons au choix</h3>
+          <p class="tag">Saucisson</p>
         </div>
-        <p class="description">
-          Les box personnalisées sont une nouvelle façon de vivre une expérience
-          avec vos commerçants. C’est un moyen pour les consommateurs de
-          découvrir de nouveaux produits et de se sentir plus proches de leurs
-          marques préférées. Les box personnalisées offrent également aux
-          commerçants une plateforme pour présenter leurs produits d’une manière
-          unique et engageante. Les boxes personnalisées sont une nouvelle façon
-          de vivre une expérience avec vos commerçants. Elles permettent aux
-          consommateurs de recevoir des produits et services sur mesure, selon
-          leurs besoins et goûts.
-        </p>
-      </div>
-      <div class="divider"></div>
-      <div class="modalStepMain modalStepDescription">
-        <p class="description">Dans votre box</p>
-        <img
-          src="@/assets/img/saucissons-au-choix.png"
-          alt=""
-          class="saucissonImage"
-        />
-        <div class="title">
-          <img src="@/assets/img/svg/home.svg" alt="" />
-          <p>Goûts Malins</p>
-        </div>
-        <h3>Saucissons au choix</h3>
-        <p class="tag">Saucisson</p>
       </div>
     </div>
   </div>
@@ -103,15 +105,22 @@ export default defineComponent({
 .modalStepRoot {
   position: fixed;
   left: 50%;
-  top: 50%;
+  top: 55%;
   transform: translate(-50%, -50%);
   z-index: 10;
   background-color: white;
   border-radius: 8px;
   z-index: 10;
   padding: 98px 0 32px 0;
-  max-width: 335px;
+  width: 335px;
+  max-width: 100%;
+  height: 100%;
   box-shadow: 0px 1px 16px rgba(29, 33, 57, 0.16);
+
+  .modalStepContainer {
+    overflow: scroll;
+    height: 100%;
+  }
 
   .titleRoot {
     display: none;
@@ -121,6 +130,7 @@ export default defineComponent({
     padding: 24px 0 0 0;
     width: 1000px;
     max-width: 100%;
+    top: 50%;
 
     .titleRoot {
       padding: 0 0 16px 16px;
@@ -146,6 +156,7 @@ export default defineComponent({
   }
 
   .modalStepHeader {
+    overflow: visible;
     @include above(small) {
       display: flex;
       align-items: flex-end;
@@ -246,6 +257,11 @@ export default defineComponent({
     @include typo-text;
     font-size: 16px;
     text-align: left;
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     @include above(small) {
       margin: 24px 0;
@@ -302,6 +318,14 @@ export default defineComponent({
         margin: 0;
         max-width: 273px;
       }
+    }
+  }
+
+  .second {
+    display: none;
+
+    @include above(small) {
+      display: block;
     }
   }
 }

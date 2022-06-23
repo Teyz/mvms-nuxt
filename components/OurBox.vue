@@ -75,7 +75,7 @@ export default defineComponent({
     content: "";
     background-image: url("../assets/img/ourBox.png");
     position: absolute;
-    top: -16%;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 314px;
