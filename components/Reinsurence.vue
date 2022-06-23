@@ -8,23 +8,23 @@
             data-cy="ul-reinsurance"
           >
             <li class="my-2 my-lg-0 p-0">
-              <img width="102" src="../assets/img/svg/reinsurence1.svg" />
+              <img width="102" src="@/assets/img/svg/reinsurence1.svg" />
               <span>Retrait en boutique <br />en 2h</span>
             </li>
             <li class="my-2 my-lg-0 p-0">
-              <img width="102" src="../assets/img/svg/reinsurence2.svg" />
+              <img width="102" src="@/assets/img/svg/reinsurence2.svg" />
               <span>Livraison partout <br />en France</span>
             </li>
             <li class="my-2 my-lg-0 p-0">
-              <img width="102" src="../assets/img/svg/reinsurence3.svg" />
+              <img width="102" src="@/assets/img/svg/reinsurence3.svg" />
               <span>Paiement 100% <br />sécurisé</span>
             </li>
             <li class="my-2 my-lg-0 p-0">
-              <img width="102" src="../assets/img/svg/reinsurence4.svg" />
+              <img width="102" src="@/assets/img/svg/reinsurence4.svg" />
               <span>Échanges et <br />remboursements</span>
             </li>
             <li class="my-2 my-lg-0 p-0">
-              <img width="102" src="../assets/img/svg/reinsurence5.svg" />
+              <img width="102" src="@/assets/img/svg/reinsurence5.svg" />
               <span>Service client aux <br />petits oignons</span>
             </li>
           </ul>

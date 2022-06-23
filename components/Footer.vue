@@ -203,7 +203,7 @@
                   width="100"
                   height="32"
                   alt="Bouton AppStore pour télécharger l'application"
-                  src="../assets/img/svg/appstore.svg"
+                  src="@/assets/img/svg/appstore.svg"
                 />
               </a>
               <a
@@ -214,7 +214,7 @@
                   width="100"
                   height="32"
                   alt="Bouton GooglePlay pour télécharger l'application"
-                  src="../assets/img/svg/google-play.svg"
+                  src="@/assets/img/svg/google-play.svg"
                 />
               </a>
             </div>

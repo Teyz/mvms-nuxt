@@ -8,7 +8,7 @@
         celui-ci a assemblé votre box !
       </p>
       <img
-        src="../assets/img/livraison.png"
+        src="@/assets/img/livraison.png"
         alt="Ma ville mon shopping livraison à vélo"
       />
     </div>

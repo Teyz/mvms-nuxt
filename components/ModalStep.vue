@@ -1,7 +1,7 @@
 <template>
   <div class="modalStepRoot">
     <img
-      src="../assets/img/svg/close.svg"
+      src="@/assets/img/svg/close.svg"
       alt=""
       class="closeIcon"
       @click="closeModal"
@@ -11,16 +11,16 @@
       <div class="modalStepMain">
         <div class="modalStepHeader">
           <img
-            src="../assets/img/avatar-cityzen-fond-blanc.png"
+            src="@/assets/img/avatar-cityzen-fond-blanc.png"
             alt=""
             class="avatar"
           />
           <div class="modalReviews">
             <h2>Goûts Malins</h2>
             <p>...</p>
-            <img src="../assets/img/reviews.png" alt="" class="reviews" />
+            <img src="@/assets/img/reviews.png" alt="" class="reviews" />
             <img
-              src="../assets/img/reviews-left.png"
+              src="@/assets/img/reviews-left.png"
               alt=""
               class="reviews-left"
             />
@@ -29,12 +29,12 @@
         </div>
         <div class="imageRoot">
           <img
-            src="../assets/img/etalage-saucissons.png"
+            src="@/assets/img/etalage-saucissons.png"
             alt=""
             class="saucissonImage"
           />
           <img
-            src="../assets/img/etalage-saucissons-planche.png"
+            src="@/assets/img/etalage-saucissons-planche.png"
             alt=""
             class="saucissonImage"
           />
@@ -55,12 +55,12 @@
       <div class="modalStepMain modalStepDescription">
         <p class="description">Dans votre box</p>
         <img
-          src="../assets/img/saucissons-au-choix.png"
+          src="@/assets/img/saucissons-au-choix.png"
           alt=""
           class="saucissonImage"
         />
         <div class="title">
-          <img src="../assets/img/svg/home.svg" alt="" />
+          <img src="@/assets/img/svg/home.svg" alt="" />
           <p>Goûts Malins</p>
         </div>
         <h3>Saucissons au choix</h3>

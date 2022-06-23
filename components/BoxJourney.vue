@@ -38,12 +38,12 @@
       <div class="secondStepRoot">
         <div class="imageRoot">
           <img
-            src="../assets/img/marqueur.png"
+            src="@/assets/img/marqueur.png"
             alt=""
             class="stepPopup"
             @click="test"
           />
-          <img src="../assets/img/boucherie.png" alt="" class="stepImage" />
+          <img src="@/assets/img/boucherie.png" alt="" class="stepImage" />
         </div>
         <svg
           width="49"
@@ -75,19 +75,19 @@
         </svg>
       </div>
       <div class="thirdStepRoot">
-        <img src="../assets/img/marqueur.png" alt="" class="stepPopup" />
-        <img src="../assets/img/fromagerie.png" alt="" class="stepImage" />
+        <img src="@/assets/img/marqueur.png" alt="" class="stepPopup" />
+        <img src="@/assets/img/fromagerie.png" alt="" class="stepImage" />
       </div>
       <div class="fourthStepRoot">
-        <img src="../assets/img/marqueur.png" alt="" class="stepPopup" />
-        <img src="../assets/img/caviste.png" alt="" class="stepImage" />
+        <img src="@/assets/img/marqueur.png" alt="" class="stepPopup" />
+        <img src="@/assets/img/caviste.png" alt="" class="stepImage" />
       </div>
       <div class="fifthStepRoot">
-        <img src="../assets/img/marqueur.png" alt="" class="stepPopup" />
-        <img src="../assets/img/commerce.png" alt="" class="stepImage" />
+        <img src="@/assets/img/marqueur.png" alt="" class="stepPopup" />
+        <img src="@/assets/img/commerce.png" alt="" class="stepImage" />
       </div>
       <div class="finalStepRoot">
-        <img src="../assets/img/succes.png" alt="" class="stepImage" />
+        <img src="@/assets/img/succes.png" alt="" class="stepImage" />
       </div>
     </div>
     <transition name="fade">

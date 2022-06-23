@@ -21,7 +21,7 @@
             class="w-100"
             style="object-fit: contain; height: 100%"
             data-cy="img-logo"
-            src="../assets/img/svg/logo.svg"
+            src="@/assets/img/svg/logo.svg"
           />
         </a>
       </section>
@@ -110,7 +110,7 @@
                       width="42"
                       height="42"
                       class="my-auto"
-                      src="../assets/img/avatar-header.png"
+                      src="@/assets/img/avatar-header.png"
                     />
                   </div>
                   <div>
