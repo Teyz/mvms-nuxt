@@ -11,9 +11,11 @@
     "nuxt": "3.0.0-rc.4"
   },
   "dependencies": {
+    "@vee-validate/rules": "^4.5.11",
     "@vueuse/core": "^8.7.5",
     "aos": "^2.3.4",
     "sass": "^1.52.3",
+    "vee-validate": "^4.5.11",
     "vivus": "^0.4.6",
     "vue-aos": "^2.3.0",
     "vue-star-rating": "^2.1.0"

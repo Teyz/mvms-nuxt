@@ -303,7 +303,7 @@
 
         <div class="px-0 px-md-2 blue-mvms-dark">
           <div>Une entreprise de</div>
-          <img src="/assets/img/laposte-logo.png" />
+          <img src="@/assets/img/laposte-logo.png" />
         </div>
       </div>
     </div>

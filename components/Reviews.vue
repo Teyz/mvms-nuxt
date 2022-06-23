@@ -145,6 +145,13 @@ export default defineComponent({
     .starsAverage {
       color: #8797a6;
     }
+    .vue-star-rating {
+      justify-content: center;
+      @include above(small) {
+        justify-content: flex-start;
+      }
+    }
+
     .addReview {
       width: auto;
       font-size: 16px;

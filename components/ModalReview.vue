@@ -14,7 +14,7 @@
       />
       <h2>Qu’avez-vous pensé de <span>Goûts Malins</span> ?</h2>
       <hr class="orangeLine" />
-      <div class="modalForm">
+      <VForm @submit="addReview" class="modalForm">
         <div class="stars">
           <StarsRatings
             v-bind:show-rating="false"
@@ -25,46 +25,65 @@
         <div class="inputName">
           <div>
             <label for="name">Nom*</label>
-            <input
+            <VField
               id="name"
               type="text"
+              as="input"
+              rules="required"
+              name="name"
               v-model="name"
               placeholder="ex: Rigaud"
             />
+            <VErrorMessage name="name"></VErrorMessage>
           </div>
           <div class="firstnameDiv">
             <label for="firstname">Prénom*</label>
-            <input
+            <VField
               id="firstname"
               type="text"
+              as="input"
+              rules="required"
+              name="firstname"
               v-model="firstname"
               placeholder="ex: Tom"
             />
+            <VErrorMessage name="firstname"></VErrorMessage>
           </div>
         </div>
         <div>
           <label for="review">Votre avis*</label>
-          <textarea
+          <VField
             id="review"
+            name="review"
+            rules="required"
             v-model="review"
+            as="textarea"
             rows=""
             cols=""
             placeholder="Pour vous aider :
 - Expliquez-nous pourquoi vous avez mis cette note ?
 - Qu’avez-vous préféré de cette boutique ?
 - La recommanderiez-vous à vos proches ?"
-          ></textarea>
+          />
+          <VErrorMessage name="review"></VErrorMessage>
         </div>
         <div class="rgpd">
-          <input type="checkbox" id="checkbox" />
+          <VField
+            id="checkbox"
+            name="checkbox"
+            rules="required"
+            as="input"
+            type="checkbox"
+            value="false"
+            unchecked-value="false"
+          />
           <label for="checkbox"
             >J’ai lu et j’accepte les règles de publication des avis.*</label
           >
+          <VErrorMessage name="checkbox"></VErrorMessage>
         </div>
-        <button class="button addReview" @click="addReview">
-          Publier votre avis
-        </button>
-      </div>
+        <button class="button addReview">Publier votre avis</button>
+      </VForm>
     </div>
   </div>
 </template>
@@ -81,7 +100,11 @@ export default defineComponent({
     },
   },
   emits: ["showModal", "update:showModal", "reloadReview"],
-
+  data() {
+    return {
+      validations: { required: true },
+    };
+  },
   setup(props, { emit }) {
     const client = useSupabaseClient();
     const name = ref("");
@@ -251,7 +274,6 @@ export default defineComponent({
       border-radius: 8px;
       width: 100%;
       height: 100px;
-      margin-bottom: 16px;
     }
     label {
       font-weight: 600;
@@ -259,7 +281,7 @@ export default defineComponent({
     .rgpd {
       display: flex;
       justify-content: flex-start;
-      margin-bottom: 20px;
+      margin: 20px 0;
       input {
         margin-right: 15px;
       }
