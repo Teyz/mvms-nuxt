@@ -105,16 +105,16 @@ export default defineComponent({
 .modalStepRoot {
   position: fixed;
   left: 50%;
-  top: 55%;
+  top: 51%;
   transform: translate(-50%, -50%);
   z-index: 10;
   background-color: white;
   border-radius: 8px;
   z-index: 10;
-  padding: 98px 0 32px 0;
+  padding: 98px 0 0 0;
   width: 335px;
   max-width: 100%;
-  height: 100%;
+  height: 95vh;
   box-shadow: 0px 1px 16px rgba(29, 33, 57, 0.16);
 
   .modalStepContainer {
