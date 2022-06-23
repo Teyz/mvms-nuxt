@@ -165,12 +165,16 @@ export default defineComponent({
   .avatar {
     object-fit: cover;
     width: 115px;
+    height: 115px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     top: -3%;
 
     @include above(small) {
+      object-fit: cover;
+      width: 133px;
+      height: 100%;
       position: relative;
       display: block;
       left: inherit;
@@ -287,6 +291,7 @@ export default defineComponent({
 
       .saucissonImage {
         margin: 0;
+        max-width: 273px;
       }
     }
   }

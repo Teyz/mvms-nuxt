@@ -98,28 +98,23 @@
 
 <script lang="ts">
 import { isMobile } from "~/utils";
-
 export default defineComponent({
   name: "BoxJourney",
   emits: ["update:showModal"],
   setup() {
     const isDesktop = ref(false);
     const showModal = ref(false);
-
     const toggleModal = (event: boolean) => {
       showModal.value = event;
     };
-
     const test = () => {
       showModal.value = true;
     };
-
     onMounted(() => {
       if (!isMobile()) {
         isDesktop.value = true;
       }
     });
-
     return { isDesktop, toggleModal, showModal, test };
   },
 });
@@ -128,7 +123,6 @@ export default defineComponent({
 <style lang="scss" scoped>
 .boxJourneyRoot {
   position: relative;
-
   @include above(small) {
     height: 800px;
   }
@@ -139,19 +133,16 @@ export default defineComponent({
     max-width: 240px;
     margin: 0 auto;
     border-radius: 8px;
-
     p {
       font-family: "Montserrat";
       font-size: 16px;
       font-weight: 500;
     }
-
     #firstStep {
       right: 50px;
       top: 95%;
       position: absolute;
     }
-
     &.desktop {
       #firstStep {
         top: 50%;
@@ -160,15 +151,12 @@ export default defineComponent({
       }
     }
   }
-
   .mainSteps {
     position: relative;
   }
-
   .secondStepRoot {
     margin: 24px 0;
     position: relative;
-
     #mainStep {
       position: absolute;
       left: 50%;
@@ -177,15 +165,12 @@ export default defineComponent({
       z-index: 1;
     }
   }
-
   .thirdStepRoot {
     margin: 160px 0;
   }
-
   .fourthStepRoot {
     margin-bottom: 160px;
   }
-
   .stepImage {
     display: block;
     margin: 0 auto;
@@ -194,17 +179,14 @@ export default defineComponent({
     z-index: 2;
     position: relative;
   }
-
   .fifthStepRoot {
     margin-bottom: 60px;
   }
-
   .finalStepRoot {
     .stepImage {
       z-index: 0;
     }
   }
-
   .stepPopup {
     display: block;
     margin: 0 auto;
@@ -213,7 +195,6 @@ export default defineComponent({
     cursor: pointer;
   }
 }
-
 @include above(small) {
   .secondStepRoot {
     .imageRoot {
@@ -222,24 +203,20 @@ export default defineComponent({
       left: 26%;
     }
   }
-
   .thirdStepRoot {
     position: absolute;
     left: 12%;
   }
-
   .fourthStepRoot {
     position: absolute;
     top: 15%;
     left: 49%;
   }
-
   .fifthStepRoot {
     position: absolute;
     left: 72%;
     top: -30%;
   }
-
   .finalStepRoot {
     position: absolute;
     right: 16%;

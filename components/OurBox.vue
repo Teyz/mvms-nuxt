@@ -52,7 +52,21 @@ export default defineComponent({
 <style lang="scss" scoped>
 .ourBoxRoot {
   max-width: 335px;
+  position: relative;
   margin: 0 auto;
+
+  &:before {
+    content: "";
+    background-image: url("../assets/img/ourBox.png");
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 563px;
+    height: 443px;
+    object-fit: contain;
+    background-size: contain;
+  }
 
   @include above(small) {
     max-width: 1125px;
