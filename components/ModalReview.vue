@@ -1,5 +1,5 @@
 <template>
-  <div class="modalReviewRoot">
+  <div class="modalReviewRoot" ref="target">
     <img
       src="@/assets/img/svg/close.svg"
       alt=""
@@ -70,6 +70,8 @@
 </template>
 
 <script lang="ts">
+import { disableScroll } from "@/utils/utils";
+import { onClickOutside } from "@vueuse/core";
 export default defineComponent({
   name: "modalReview",
   props: {
@@ -87,6 +89,12 @@ export default defineComponent({
     const review = ref("");
     const rating = ref(0);
 
+    const target = ref(null);
+    onClickOutside(target, () => {
+      disableScroll(false);
+      emit("showModal", false);
+    });
+
     const addReview = async () => {
       const { data, error } = await client.from("reviews").insert([
         {
@@ -101,6 +109,7 @@ export default defineComponent({
     };
 
     const closeModal = () => {
+      disableScroll(false);
       emit("showModal", false);
     };
 
@@ -111,6 +120,7 @@ export default defineComponent({
       firstname,
       rating,
       review,
+      target,
     };
   },
 });
@@ -119,12 +129,12 @@ export default defineComponent({
 <style lang="scss" scoped>
 .modalReviewRoot {
   position: fixed;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translate(-50%, -50%);
   z-index: 10;
   background-color: white;
   border-radius: 8px;
-  position: relative;
   z-index: 10;
   padding: 24px 0 0 0;
   max-width: 335px;

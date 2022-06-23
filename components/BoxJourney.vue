@@ -97,6 +97,7 @@
 </template>
 
 <script lang="ts">
+import { disableScroll } from "@/utils/utils";
 import { isMobile } from "~/utils";
 export default defineComponent({
   name: "BoxJourney",
@@ -109,6 +110,7 @@ export default defineComponent({
     };
     const test = () => {
       showModal.value = true;
+      disableScroll(true);
     };
     onMounted(() => {
       if (!isMobile()) {

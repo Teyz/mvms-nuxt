@@ -19,7 +19,15 @@
           Note globale sur {{ reviews?.length }} avis clients
         </p>
       </div>
-      <button class="button addReview" @click="() => (showModal = true)">
+      <button
+        class="button addReview"
+        @click="
+          () => {
+            showModal = true;
+            disableScroll(true);
+          }
+        "
+      >
         Laisser un avis
       </button>
       <transition name="fade">
@@ -57,6 +65,7 @@
   </section>
 </template>
 <script lang="ts">
+import { disableScroll } from "@/utils/utils";
 export default defineComponent({
   name: "Reviews",
   emits: ["update:showModal"],
@@ -92,7 +101,14 @@ export default defineComponent({
       await getReviews();
     });
 
-    return { reviews, average, getReviews, toggleModal, showModal };
+    return {
+      reviews,
+      average,
+      getReviews,
+      toggleModal,
+      showModal,
+      disableScroll,
+    };
   },
 });
 </script>

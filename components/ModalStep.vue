@@ -1,5 +1,5 @@
 <template>
-  <div class="modalStepRoot">
+  <div class="modalStepRoot" ref="target">
     <img
       src="@/assets/img/svg/close.svg"
       alt=""
@@ -71,6 +71,8 @@
 </template>
 
 <script lang="ts">
+import { disableScroll } from "@/utils/utils";
+import { onClickOutside } from "@vueuse/core";
 export default defineComponent({
   name: "ModalStep",
   props: {
@@ -81,11 +83,18 @@ export default defineComponent({
   },
   emits: ["showModal", "update:showModal"],
   setup(props, { emit }) {
+    const target = ref(null);
+    onClickOutside(target, () => {
+      disableScroll(false);
+      emit("showModal", false);
+    });
+
     const closeModal = () => {
+      disableScroll(false);
       emit("showModal", false);
     };
 
-    return { closeModal };
+    return { closeModal, target };
   },
 });
 </script>
@@ -99,7 +108,6 @@ export default defineComponent({
   z-index: 10;
   background-color: white;
   border-radius: 8px;
-  position: relative;
   z-index: 10;
   padding: 98px 0 32px 0;
   max-width: 335px;
@@ -111,7 +119,8 @@ export default defineComponent({
 
   @include above(small) {
     padding: 24px 0 0 0;
-    max-width: 1015px;
+    width: 1000px;
+    max-width: 100%;
 
     .titleRoot {
       padding: 0 0 16px 16px;
