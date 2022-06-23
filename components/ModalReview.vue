@@ -1,14 +1,14 @@
 <template>
   <div class="modalReviewRoot">
     <img
-      src="../assets/img/svg/close.svg"
+      src="@/assets/img/svg/close.svg"
       alt=""
       class="closeIcon"
       @click="closeModal"
     />
     <div class="modalReviewContent">
       <img
-        src="../assets/img/avatar-cityzen-fond-blanc.png"
+        src="@/assets/img/avatar-cityzen-fond-blanc.png"
         alt=""
         class="avatar"
       />

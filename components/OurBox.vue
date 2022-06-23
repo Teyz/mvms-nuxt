@@ -75,7 +75,7 @@ export default defineComponent({
     content: "";
     background-image: url("../assets/img/ourBox.png");
     position: absolute;
-    top: 0;
+    top: -16%;
     left: 50%;
     transform: translateX(-50%);
     width: 314px;
@@ -87,7 +87,8 @@ export default defineComponent({
     @include above(small) {
       width: 563px;
       height: 443px;
-      top: -16%;
+      top: -38%;
+      z-index: 1;
     }
   }
 
