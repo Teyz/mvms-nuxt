@@ -12,6 +12,7 @@ export default defineNuxtConfig({
       },
     },
   },
+  plugins: [{ src: "~/plugin/aos", mode: "client", ssr: false }],
   render: {
     bundleRenderer: {
       shouldPreload: (file, type) => {
