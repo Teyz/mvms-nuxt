@@ -1,7 +1,7 @@
 <template>
   <section class="boxJourneyRoot">
     <div class="firstStepRoot" :class="{ desktop: isDesktop }">
-      <p data-aos="draw">
+      <p>
         Cliquez ici pour en savoir plus sur chaque point de trajet et découvrez
         des infos exclusives sur vos commerçants !
       </p>
@@ -30,9 +30,7 @@
       >
         <path
           d="M0.0124702 43.3427C-0.0744772 43.8881 0.29717 44.4007 0.842568 44.4876L9.73034 45.9045C10.2757 45.9915 10.7884 45.6198 10.8753 45.0744C10.9622 44.529 10.5906 44.0164 10.0452 43.9294L2.14496 42.67L3.40442 34.7697C3.49137 34.2243 3.11972 33.7117 2.57432 33.6248C2.02893 33.5378 1.51631 33.9095 1.42936 34.4549L0.0124702 43.3427ZM105.98 2.99986C106.532 3.01079 106.989 2.57203 107 2.01985C107.011 1.46768 106.572 1.01118 106.02 1.00025L105.98 2.99986ZM1.58697 44.3097C11.5528 37.0845 27.6462 26.5473 46.2703 17.9199C64.9078 9.28642 85.9975 2.60416 105.98 2.99986L106.02 1.00025C85.6025 0.595947 64.1922 7.41371 45.4297 16.1052C26.6538 24.8028 10.4472 35.4157 0.413032 42.6905L1.58697 44.3097Z"
-          stroke="#98A0C6"
-          stroke-width="1"
-          data-aos="draw"
+          fill="#98A0C6"
         />
       </svg>
     </div>
@@ -61,27 +59,18 @@
             fill="#98A0C6"
           />
         </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 381.1 105.2">
+        <svg
+          width="935"
+          height="423"
+          viewBox="0 0 935 423"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          id="mainStep"
+          v-else
+        >
           <path
-            class="st0"
-            d="M190.9,105.2c-55.1,0-110.1-21-152.1-62.9L-1.7,1.7L0,0l40.6,40.6c40.2,40.2,93.5,62.3,150.3,62.3
-	s110.2-22.1,150.3-62.3l38.1-38.1l1.7,1.7L343,42.3C301,84.3,246,105.2,190.9,105.2z"
-            data-aos="draw"
-            stroke="black"
-            fill="none"
-            stroke-miterlimit="10"
-            stroke-width="18"
-          />
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 403.44 74.33">
-          <path
-            class="squiggle"
-            fill="none"
-            stroke="#bc85ff"
-            stroke-miterlimit="10"
-            stroke-width="18"
-            data-aos="draw"
-            d="M14.2 65.54s36-36.79 56.31-35.66 38.6 27.31 58.13 26.56 26.34-5.91 37.6-13 30.53-19.52 39.48-19.14 19.48 8.23 31.12 19.87 18.91 13.2 25.25 13.16S278.24 58 297 40.76s25.86-17.86 31.49-17.86 48.11 15.42 65 13.27"
+            d="M23.5003 361L24.3428 360.461L23.5003 361ZM451 280L450.218 279.376L451 280ZM885 95L885.722 94.3081L885 95ZM920.584 311.402C920.806 311.908 921.396 312.138 921.902 311.916L930.143 308.298C930.648 308.076 930.878 307.486 930.656 306.98C930.434 306.474 929.844 306.244 929.339 306.466L922.014 309.682L918.798 302.357C918.576 301.852 917.986 301.622 917.48 301.844C916.974 302.066 916.744 302.655 916.966 303.161L920.584 311.402ZM207.555 0.853201C194.266 90.3995 124.01 142.008 68.783 190.548C41.2408 214.756 17.3858 238.258 6.59529 265.346C-4.2408 292.549 -1.84884 323.203 22.6577 361.539L24.3428 360.461C0.0992808 322.537 -2.09216 292.56 8.4533 266.086C19.0443 239.499 42.5358 216.28 70.1033 192.051C125.096 143.716 196.112 91.5842 209.533 1.1468L207.555 0.853201ZM22.6577 361.539C60.6183 420.92 142.478 432.659 227.253 413.724C312.101 394.772 400.391 345.009 451.782 280.624L450.218 279.376C399.162 343.342 311.305 392.901 226.817 411.772C142.254 430.66 61.588 418.724 24.3428 360.461L22.6577 361.539ZM451.782 280.624C498.903 221.588 567.027 133.449 643.467 81.0371C681.674 54.8391 721.865 37.6361 762.47 37.3921C803.034 37.1484 844.159 53.8288 884.278 95.6919L885.722 94.3081C845.288 52.1156 803.658 35.1446 762.458 35.3922C721.299 35.6395 680.717 53.0704 642.336 79.3876C565.596 132.006 497.273 220.423 450.218 279.376L451.782 280.624ZM884.278 95.6919C918.552 131.456 930.508 177.813 932.439 218.984C934.37 260.167 926.264 296.026 920.568 310.637L922.432 311.363C928.236 296.474 936.38 260.333 934.436 218.891C932.492 177.437 920.448 130.544 885.722 94.3081L884.278 95.6919Z"
+            fill="#98A0C6"
           />
         </svg>
       </div>
@@ -109,28 +98,23 @@
 
 <script lang="ts">
 import { isMobile } from "~/utils";
-
 export default defineComponent({
   name: "BoxJourney",
   emits: ["update:showModal"],
   setup() {
     const isDesktop = ref(false);
     const showModal = ref(false);
-
     const toggleModal = (event: boolean) => {
       showModal.value = event;
     };
-
     const test = () => {
       showModal.value = true;
     };
-
     onMounted(() => {
       if (!isMobile()) {
         isDesktop.value = true;
       }
     });
-
     return { isDesktop, toggleModal, showModal, test };
   },
 });
@@ -139,7 +123,6 @@ export default defineComponent({
 <style lang="scss" scoped>
 .boxJourneyRoot {
   position: relative;
-
   @include above(small) {
     height: 800px;
   }
@@ -150,19 +133,16 @@ export default defineComponent({
     max-width: 240px;
     margin: 0 auto;
     border-radius: 8px;
-
     p {
       font-family: "Montserrat";
       font-size: 16px;
       font-weight: 500;
     }
-
     #firstStep {
       right: 50px;
       top: 95%;
       position: absolute;
     }
-
     &.desktop {
       #firstStep {
         top: 50%;
@@ -171,15 +151,12 @@ export default defineComponent({
       }
     }
   }
-
   .mainSteps {
     position: relative;
   }
-
   .secondStepRoot {
     margin: 24px 0;
     position: relative;
-
     #mainStep {
       position: absolute;
       left: 50%;
@@ -188,15 +165,12 @@ export default defineComponent({
       z-index: 1;
     }
   }
-
   .thirdStepRoot {
     margin: 160px 0;
   }
-
   .fourthStepRoot {
     margin-bottom: 160px;
   }
-
   .stepImage {
     display: block;
     margin: 0 auto;
@@ -205,17 +179,14 @@ export default defineComponent({
     z-index: 2;
     position: relative;
   }
-
   .fifthStepRoot {
     margin-bottom: 60px;
   }
-
   .finalStepRoot {
     .stepImage {
       z-index: 0;
     }
   }
-
   .stepPopup {
     display: block;
     margin: 0 auto;
@@ -224,7 +195,6 @@ export default defineComponent({
     cursor: pointer;
   }
 }
-
 @include above(small) {
   .secondStepRoot {
     .imageRoot {
@@ -233,42 +203,24 @@ export default defineComponent({
       left: 26%;
     }
   }
-
   .thirdStepRoot {
     position: absolute;
     left: 12%;
   }
-
   .fourthStepRoot {
     position: absolute;
     top: 15%;
     left: 49%;
   }
-
   .fifthStepRoot {
     position: absolute;
     left: 72%;
     top: -30%;
   }
-
   .finalStepRoot {
     position: absolute;
     right: 16%;
     top: 250px;
-  }
-}
-
-[data-aos="draw"] {
-  stroke-dasharray: 3473.97705078125;
-  stroke-dashoffset: 3473.97705078125;
-
-  &.aos-animate {
-    animation: dash 10s ease forwards;
-  }
-}
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
   }
 }
 </style>

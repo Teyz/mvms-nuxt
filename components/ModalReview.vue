@@ -15,6 +15,7 @@
       <h2>Qu’avez-vous pensé de <span>Goûts Malins</span> ?</h2>
       <hr class="orangeLine" />
       <div class="modalForm">
+        <StarsRatings v-model:rating="rating"></StarsRatings>
         <div class="inputName">
           <input type="text" v-model="name" placeholder="Nom*" />
           <input type="text" v-model="firstname" placeholder="Prénom*" />
@@ -58,6 +59,7 @@ export default defineComponent({
     const name = ref("");
     const firstname = ref("");
     const review = ref("");
+    const rating = ref(0);
 
     const addReview = async () => {
       const { data, error } = await client.from("reviews").insert([
@@ -78,6 +80,7 @@ export default defineComponent({
       addReview,
       name,
       firstname,
+      rating,
       review,
     };
   },

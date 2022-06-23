@@ -12,7 +12,10 @@ export default defineNuxtConfig({
       },
     },
   },
-  plugins: [{ src: "~/plugin/aos", mode: "client", ssr: false }],
+  plugins: [
+    { src: "~/plugin/aos", mode: "client", ssr: false },
+    { src: "~/plugin/star-rating", mode: "client", ssr: false },
+  ],
   render: {
     bundleRenderer: {
       shouldPreload: (file, type) => {
