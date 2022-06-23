@@ -15,20 +15,46 @@
       <h2>Qu’avez-vous pensé de <span>Goûts Malins</span> ?</h2>
       <hr class="orangeLine" />
       <div class="modalForm">
-        <StarsRatings v-model:rating="rating"></StarsRatings>
-        <div class="inputName">
-          <input type="text" v-model="name" placeholder="Nom*" />
-          <input type="text" v-model="firstname" placeholder="Prénom*" />
+        <div class="stars">
+          <StarsRatings
+            v-bind:show-rating="false"
+            v-model:rating="rating"
+            star-size="40"
+          ></StarsRatings>
         </div>
-        <textarea
-          v-model="review"
-          rows=""
-          cols=""
-          placeholder="Pour vous aider :
+        <div class="inputName">
+          <div>
+            <label for="name">Nom*</label>
+            <input
+              id="name"
+              type="text"
+              v-model="name"
+              placeholder="ex: Rigaud"
+            />
+          </div>
+          <div class="firstnameDiv">
+            <label for="firstname">Prénom*</label>
+            <input
+              id="firstname"
+              type="text"
+              v-model="firstname"
+              placeholder="ex: Tom"
+            />
+          </div>
+        </div>
+        <div>
+          <label for="review">Votre avis*</label>
+          <textarea
+            id="review"
+            v-model="review"
+            rows=""
+            cols=""
+            placeholder="Pour vous aider :
 - Expliquez-nous pourquoi vous avez mis cette note ?
 - Qu’avez-vous préféré de cette boutique ?
 - La recommanderiez-vous à vos proches ?"
-        ></textarea>
+          ></textarea>
+        </div>
         <div class="rgpd">
           <input type="checkbox" id="checkbox" />
           <label for="checkbox"
@@ -52,7 +78,7 @@ export default defineComponent({
       default: false,
     },
   },
-  emits: ["showModal", "update:showModal"],
+  emits: ["showModal", "update:showModal", "reloadReview"],
 
   setup(props, { emit }) {
     const client = useSupabaseClient();
@@ -67,8 +93,11 @@ export default defineComponent({
           name: name.value,
           firstname: firstname.value,
           review: review.value,
+          rating: rating.value,
         },
       ]);
+      emit("reloadReview");
+      emit("showModal", false);
     };
 
     const closeModal = () => {
@@ -97,24 +126,14 @@ export default defineComponent({
   border-radius: 8px;
   position: relative;
   z-index: 10;
-  padding: 98px 0 32px 0;
+  padding: 24px 0 0 0;
   max-width: 335px;
   box-shadow: 0px 1px 16px rgba(29, 33, 57, 0.16);
 
   @include above(small) {
-    padding: 24px 0 0 0;
     max-width: 1015px;
-
     .button {
       max-width: 270px;
-    }
-  }
-  .modalForm {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    & > input {
-      margin-bottom: 20px;
     }
   }
 
@@ -149,6 +168,8 @@ export default defineComponent({
     color: $third;
     @include typo-title;
     text-align: center;
+    max-width: 350px;
+    margin: 0 auto;
     span {
       color: #de8e00;
     }
@@ -167,41 +188,74 @@ export default defineComponent({
     font-size: 26px;
     margin: 12px 0;
   }
-  input {
-    box-sizing: border-box;
-    background: #ffffff;
-    border: 1px solid #b2b8d4;
-    border-radius: 8px;
+  .stars {
+    margin: 0 auto 25px auto;
   }
-  .inputName {
+
+  .modalForm {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 16px;
+    flex-direction: column;
+    justify-content: center;
+    & > input {
+      margin-bottom: 20px;
+    }
+
     input {
       box-sizing: border-box;
       background: #ffffff;
       border: 1px solid #b2b8d4;
       border-radius: 8px;
-      width: 260px;
-      height: 40px;
+      padding-left: 10px;
     }
-  }
-  textarea {
-    box-sizing: border-box;
-    background: #ffffff;
-    border: 1px solid #b2b8d4;
-    border-radius: 8px;
-    width: 100%;
-    height: 100px;
-    margin-bottom: 16px;
-  }
-  .rgpd {
-    display: flex;
-    justify-content: flex-start;
-  }
-  .addReview {
-    margin: 0 auto;
+    .inputName {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 16px;
+
+        input {
+          box-sizing: border-box;
+          background: #ffffff;
+          border: 1px solid #b2b8d4;
+          border-radius: 8px;
+          width: 260px;
+          height: 40px;
+        }
+      }
+      @include above(small) {
+        .firstnameDiv {
+          margin-left: 10px;
+        }
+      }
+    }
+    textarea {
+      box-sizing: border-box;
+      background: #ffffff;
+      border: 1px solid #b2b8d4;
+      border-radius: 8px;
+      width: 100%;
+      height: 100px;
+      margin-bottom: 16px;
+    }
+    label {
+      font-weight: 600;
+    }
+    .rgpd {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 20px;
+      input {
+        margin-right: 15px;
+      }
+    }
+    .addReview {
+      margin: 0 auto;
+    }
   }
 }
 </style>

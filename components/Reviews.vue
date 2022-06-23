@@ -6,7 +6,14 @@
       <div class="starHeader">
         <div class="stars">
           <span>{{ average.toFixed(1) }}/5</span>
-          <span class="starsIcons"></span>
+          <span class="starsIcons">
+            <StarsRatings
+              v-bind:show-rating="false"
+              v-bind:rating="average.toFixed(0)"
+              v-bind:read-only="true"
+              star-size="20"
+            ></StarsRatings
+          ></span>
         </div>
         <p class="starsAverage">
           Note globale sur {{ reviews?.length }} avis clients
@@ -16,16 +23,31 @@
         Laisser un avis
       </button>
       <transition name="fade">
-        <ModalReview @showModal="showModal = $event" v-if="showModal" />
+        <ModalReview
+          @reloadReview="getReviews"
+          @showModal="showModal = $event"
+          v-if="showModal"
+        />
       </transition>
     </div>
-    <div v-for="review in reviews" :key="review.id" class="review">
+    <div
+      v-for="review in reviews?.slice(0, 3)"
+      :key="review?.id"
+      class="review"
+    >
       <img src="../assets/img/avatar-cityzen-fond-bleu.png" alt="" />
       <div class="reviewContent">
         <div class="reviewRightRow">
           <div>
             <span>{{ review.firstname }} {{ review.name }}</span>
-            <span class="starsIcons"></span>
+            <span class="starsIcons">
+              <StarsRatings
+                v-bind:show-rating="false"
+                v-bind:rating="review.rating"
+                v-bind:read-only="true"
+                star-size="20"
+              ></StarsRatings>
+            </span>
           </div>
           <span>{{ new Date(review.created_at).toLocaleDateString() }}</span>
         </div>
@@ -54,8 +76,7 @@ export default defineComponent({
         const { data } = await client
           .from("reviews")
           .select("*")
-          .order("created_at", { ascending: false })
-          .limit(3);
+          .order("created_at", { ascending: false });
         reviews.value = data;
         averageRating();
       });
@@ -71,7 +92,7 @@ export default defineComponent({
       await getReviews();
     });
 
-    return { reviews, average, toggleModal, showModal };
+    return { reviews, average, getReviews, toggleModal, showModal };
   },
 });
 </script>
