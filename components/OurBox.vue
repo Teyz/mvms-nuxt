@@ -69,19 +69,26 @@ export default defineComponent({
 .ourBoxRoot {
   max-width: 335px;
   position: relative;
-  margin: 0 auto;
+  margin: 64px auto;
 
   &:before {
     content: "";
     background-image: url("../assets/img/ourBox.png");
     position: absolute;
-    top: -38%;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 563px;
-    height: 443px;
-    object-fit: contain;
-    background-size: contain;
+    width: 314px;
+    height: 206px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+
+    @include above(small) {
+      width: 563px;
+      height: 443px;
+      top: -16%;
+    }
   }
 
   @include above(small) {
@@ -89,9 +96,14 @@ export default defineComponent({
   }
 
   & > h3 {
-    margin: 0 0 32px 16px;
+    margin: 0 0 196px 16px;
     @include typo-subtitle;
     color: $third;
+    z-index: 2;
+
+    @include above(small) {
+      margin: 0 0 32px 16px;
+    }
   }
   .ourBoxMain {
     background-color: #fff;
