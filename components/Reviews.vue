@@ -35,7 +35,7 @@
       :key="review?.id"
       class="review"
     >
-      <img src="@/assets/img/avatar-cityzen-fond-bleu.png" alt="" />
+      <img src="../assets/img/avatar-cityzen-fond-bleu.png" alt="" />
       <div class="reviewContent">
         <div class="reviewRightRow">
           <div>
