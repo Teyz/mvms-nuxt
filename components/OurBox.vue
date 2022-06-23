@@ -6,7 +6,7 @@
         <h2>{{ box.productBoutique }}</h2>
         <p>{{ box.productRegion }}</p>
         <div class="ourBoxDetails">
-          <img :src="`assets/img/${box.productImage.toLowerCase()}.png`" />
+          <img :src="`../assets/img/${box.productImage}.png`" />
           <div class="ourBoxContent">
             <h3>{{ box.productTitle }}</h3>
             <p>{{ box.productWeight ?? "..." }}</p>
@@ -44,7 +44,14 @@ export default defineComponent({
   setup() {
     const ourBox = getOurBox;
 
-    return { ourBox };
+    const getServiceIcon = async (iconName) => {
+      const module = await import(
+        /* @vite-ignore */ `../../static/images/svg/services/${iconName}.svg`
+      );
+      return module.default.replace(/^\/@fs/, "");
+    };
+
+    return { ourBox, getServiceIcon };
   },
 });
 </script>
