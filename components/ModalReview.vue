@@ -106,6 +106,7 @@ export default defineComponent({
       ]);
       emit("reloadReview");
       emit("showModal", false);
+      disableScroll(false);
     };
 
     const closeModal = () => {
