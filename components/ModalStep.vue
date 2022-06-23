@@ -55,7 +55,7 @@
       <div class="modalStepMain modalStepDescription">
         <p class="description">Dans votre box</p>
         <img
-          src="../assets/img/saucissons-au-choix.jpg"
+          src="../assets/img/saucissons-au-choix.png"
           alt=""
           class="saucissonImage"
         />
