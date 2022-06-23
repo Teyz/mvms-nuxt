@@ -1,5 +1,5 @@
 <template>
-  <section class="boxJourneyRoot">
+  <section class="boxJourneyRoot" id="boxJourney">
     <div class="firstStepRoot" :class="{ desktop: isDesktop }">
       <p>
         Cliquez ici pour en savoir plus sur chaque point de trajet et découvrez
@@ -142,6 +142,7 @@ export default defineComponent({
   position: relative;
   @include above(small) {
     height: 1000px;
+    padding-top: 32px;
   }
   .firstStepRoot {
     position: relative;

@@ -13,7 +13,7 @@
       />
     </div>
     <div class="buttonRoot">
-      <button class="button">Découvrir</button>
+      <a href="#boxJourney" class="button">Découvrir</a>
     </div>
   </section>
 </template>
@@ -33,7 +33,7 @@ h1 {
   }
 }
 .heroText {
-  margin: 56px 0 24px 0;
+  margin: 56px 0 0 0;
   p {
     text-align: center;
     margin: 0 auto;
@@ -70,5 +70,13 @@ h1 {
 
 .buttonRoot {
   text-align: center;
+
+  a {
+    padding: 10px 100px;
+
+    @include above(small) {
+      padding: 10px 140px;
+    }
+  }
 }
 </style>
