@@ -41,7 +41,7 @@
             src="@/assets/img/marqueur.png"
             alt=""
             class="stepPopup"
-            @click="test"
+            @click="togglePopup"
           />
           <img src="@/assets/img/boucherie.png" alt="" class="stepImage" />
         </div>
@@ -75,15 +75,30 @@
         </svg>
       </div>
       <div class="thirdStepRoot">
-        <img src="@/assets/img/marqueur.png" alt="" class="stepPopup" />
+        <img
+          src="@/assets/img/marqueur.png"
+          alt=""
+          class="stepPopup"
+          @click="togglePopup"
+        />
         <img src="@/assets/img/fromagerie.png" alt="" class="stepImage" />
       </div>
       <div class="fourthStepRoot">
-        <img src="@/assets/img/marqueur.png" alt="" class="stepPopup" />
+        <img
+          src="@/assets/img/marqueur.png"
+          alt=""
+          class="stepPopup"
+          @click="togglePopup"
+        />
         <img src="@/assets/img/caviste.png" alt="" class="stepImage" />
       </div>
       <div class="fifthStepRoot">
-        <img src="@/assets/img/marqueur.png" alt="" class="stepPopup" />
+        <img
+          src="@/assets/img/marqueur.png"
+          alt=""
+          class="stepPopup"
+          @click="togglePopup"
+        />
         <img src="@/assets/img/commerce.png" alt="" class="stepImage" />
       </div>
       <div class="finalStepRoot">
@@ -108,7 +123,7 @@ export default defineComponent({
     const toggleModal = (event: boolean) => {
       showModal.value = event;
     };
-    const test = () => {
+    const togglePopup = () => {
       showModal.value = true;
       disableScroll(true);
     };
@@ -117,7 +132,7 @@ export default defineComponent({
         isDesktop.value = true;
       }
     });
-    return { isDesktop, toggleModal, showModal, test };
+    return { isDesktop, toggleModal, showModal, togglePopup };
   },
 });
 </script>
@@ -164,7 +179,7 @@ export default defineComponent({
       left: 50%;
       transform: translateX(-50%);
       top: 95%;
-      z-index: 1;
+      z-index: -1;
     }
   }
   .thirdStepRoot {
@@ -186,7 +201,8 @@ export default defineComponent({
   }
   .finalStepRoot {
     .stepImage {
-      z-index: 0;
+      position: relative;
+      z-index: -2;
     }
   }
   .stepPopup {
