@@ -124,7 +124,7 @@ export default defineComponent({
 .boxJourneyRoot {
   position: relative;
   @include above(small) {
-    height: 800px;
+    height: 1000px;
   }
   .firstStepRoot {
     position: relative;

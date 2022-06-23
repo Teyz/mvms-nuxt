@@ -6,7 +6,7 @@
         <h2>{{ box.productBoutique }}</h2>
         <p>{{ box.productRegion }}</p>
         <div class="ourBoxDetails">
-          <img :src="box.productImage" alt="Votre box image détail" />
+          <img :src="`assets/img/${box.productImage.toLowerCase()}.png`" />
           <div class="ourBoxContent">
             <h3>{{ box.productTitle }}</h3>
             <p>{{ box.productWeight ?? "..." }}</p>
@@ -59,7 +59,7 @@ export default defineComponent({
     content: "";
     background-image: url("../assets/img/ourBox.png");
     position: absolute;
-    top: 0;
+    top: -38%;
     left: 50%;
     transform: translateX(-50%);
     width: 563px;
