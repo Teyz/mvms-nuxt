@@ -6,7 +6,7 @@
         <h2>{{ box.productBoutique }}</h2>
         <p>{{ box.productRegion }}</p>
         <div class="ourBoxDetails">
-          <img :src="`../assets/img/${box.productImage}.png`" />
+          <img :src="imgUrl(box.productImage)" />
           <div class="ourBoxContent">
             <h3>{{ box.productTitle }}</h3>
             <p>{{ box.productWeight ?? "..." }}</p>
@@ -38,20 +38,29 @@
 
 <script>
 import getOurBox from "./ourBoxList";
+import bouteille from "../assets/img/bouteille-de-vin.png";
+import saucisson from "../assets/img/saucissons-au-choix.png";
+import foie from "../assets/img/foie-gras-de-canard.png";
+import emmental from "../assets/img/emmental.png";
 
 export default defineComponent({
   name: "OurBox",
   setup() {
     const ourBox = getOurBox;
 
-    const getServiceIcon = async (iconName) => {
-      const module = await import(
-        /* @vite-ignore */ `../../static/images/svg/services/${iconName}.svg`
-      );
-      return module.default.replace(/^\/@fs/, "");
+    const imgUrl = (name) => {
+      if (name === "bouteille-de-vin") {
+        return bouteille;
+      } else if (name === "saucissons-au-choix") {
+        return saucisson;
+      } else if (name === "foie-gras-de-canard") {
+        return foie;
+      } else {
+        return emmental;
+      }
     };
 
-    return { ourBox, getServiceIcon };
+    return { ourBox, imgUrl };
   },
 });
 </script>
