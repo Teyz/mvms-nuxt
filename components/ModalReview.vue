@@ -16,10 +16,11 @@
       <hr class="orangeLine" />
       <div class="modalForm">
         <div class="inputName">
-          <input type="text" placeholder="Nom*" />
-          <input type="text" placeholder="Prénom*" />
+          <input type="text" v-model="name" placeholder="Nom*" />
+          <input type="text" v-model="firstname" placeholder="Prénom*" />
         </div>
         <textarea
+          v-model="review"
           rows=""
           cols=""
           placeholder="Pour vous aider :
@@ -27,7 +28,15 @@
 - Qu’avez-vous préféré de cette boutique ?
 - La recommanderiez-vous à vos proches ?"
         ></textarea>
-        <button class="button">Publier votre avis</button>
+        <div class="rgpd">
+          <input type="checkbox" id="checkbox" />
+          <label for="checkbox"
+            >J’ai lu et j’accepte les règles de publication des avis.*</label
+          >
+        </div>
+        <button class="button addReview" @click="addReview">
+          Publier votre avis
+        </button>
       </div>
     </div>
   </div>
@@ -43,12 +52,34 @@ export default defineComponent({
     },
   },
   emits: ["showModal", "update:showModal"],
+
   setup(props, { emit }) {
+    const client = useSupabaseClient();
+    const name = ref("");
+    const firstname = ref("");
+    const review = ref("");
+
+    const addReview = async () => {
+      const { data, error } = await client.from("reviews").insert([
+        {
+          name: name.value,
+          firstname: firstname.value,
+          review: review.value,
+        },
+      ]);
+    };
+
     const closeModal = () => {
       emit("showModal", false);
     };
 
-    return { closeModal };
+    return {
+      closeModal,
+      addReview,
+      name,
+      firstname,
+      review,
+    };
   },
 });
 </script>
@@ -79,7 +110,6 @@ export default defineComponent({
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     & > input {
       margin-bottom: 20px;
     }
@@ -162,6 +192,13 @@ export default defineComponent({
     width: 100%;
     height: 100px;
     margin-bottom: 16px;
+  }
+  .rgpd {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .addReview {
+    margin: 0 auto;
   }
 }
 </style>
