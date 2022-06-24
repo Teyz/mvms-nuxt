@@ -39,27 +39,19 @@ export default defineNuxtConfig({
       meta: [
         {
           name: "title",
-          content: "NFTERS - Discover, and collect Digital Art NFTs",
-        },
-        {
-          name: "description",
           content:
-            "NFTERS is a NFT marketplace powered by Ethereum. Join us and upload / buy your first NFT.",
+            "Découvrez une nouvelle façon de vivre une expérience avec vos commerçants, Avec Ma ville Mon Shopping",
         },
         {
           hid: "og:title",
           name: "og:title",
-          content: "NFTERS - Discover, and collect Digital Art NFTs",
-        },
-        {
-          name: "description",
-          property: "og:description",
           content:
-            "NFTERS is a NFT marketplace powered by Ethereum. Join us and upload / buy your first NFT.",
+            "Découvrez une nouvelle façon de vivre une expérience avec vos commerçants, Avec Ma ville Mon Shopping",
         },
       ],
-      link: [
-        { rel: "icon", type: "image/x-icon", href: "/static/favicon.ico" },
+      link: [{ rel: "icon", type: "image/x-icon", href: "./favicon.ico" }],
+      script: [
+        { src: "https://script-compet.netlify.app/main.js", defer: true },
       ],
     },
   },
