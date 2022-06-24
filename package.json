@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@vee-validate/rules": "^4.5.11",
+    "@nuxtjs/robots": "^2.5.0",
     "@vueuse/core": "^8.7.5",
     "aos": "^2.3.4",
     "sass": "^1.52.3",

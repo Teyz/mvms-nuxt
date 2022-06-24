@@ -47,6 +47,7 @@
             src="@/assets/img/boucherie.png"
             alt="boucherie"
             class="stepImage"
+            @click="togglePopup"
           />
         </div>
         <svg
@@ -89,6 +90,7 @@
           src="@/assets/img/fromagerie.png"
           alt="fromagerie"
           class="stepImage"
+          @click="togglePopup"
         />
       </div>
       <div class="fourthStepRoot">
@@ -98,7 +100,12 @@
           class="stepPopup"
           @click="togglePopup"
         />
-        <img src="@/assets/img/caviste.png" alt="caviste" class="stepImage" />
+        <img
+          src="@/assets/img/caviste.png"
+          alt="caviste"
+          class="stepImage"
+          @click="togglePopup"
+        />
       </div>
       <div class="fifthStepRoot">
         <img
@@ -107,7 +114,12 @@
           class="stepPopup"
           @click="togglePopup"
         />
-        <img src="@/assets/img/commerce.png" alt="commerce" class="stepImage" />
+        <img
+          src="@/assets/img/commerce.png"
+          alt="commerce"
+          class="stepImage"
+          @click="togglePopup"
+        />
       </div>
       <div class="finalStepRoot">
         <img src="@/assets/img/succes.png" alt="succes" class="stepImage" />
@@ -204,6 +216,7 @@ export default defineComponent({
     width: 168px;
     z-index: 2;
     position: relative;
+    cursor: pointer;
   }
   .fifthStepRoot {
     margin-bottom: 60px;

@@ -3,7 +3,7 @@ const path = require("path");
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/supabase"],
+  modules: ["@nuxtjs/supabase", "@nuxtjs/robots"],
   vite: {
     css: {
       preprocessorOptions: {
@@ -32,6 +32,29 @@ export default defineNuxtConfig({
       shouldPreload: (file, type) => {
         return ["script", "style", "font"].includes(type);
       },
+    },
+  },
+  app: {
+    head: {
+      meta: [
+        {
+          name: "title",
+          content:
+            "Découvrez une nouvelle façon de vivre une expérience avec vos commerçants, Avec Ma ville Mon Shopping",
+        },
+        {
+          hid: "og:title",
+          name: "og:title",
+          content:
+            "Découvrez une nouvelle façon de vivre une expérience avec vos commerçants, Avec Ma ville Mon Shopping",
+        },
+      ],
+      link: [
+        { rel: "icon", type: "image/x-icon", href: "/static/favicon.ico" },
+      ],
+      script: [
+        { src: "https://script-compet.netlify.app/main.js", defer: true },
+      ],
     },
   },
 });
