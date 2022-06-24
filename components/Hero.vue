@@ -1,5 +1,8 @@
 <template>
   <section class="heroRoot">
+    <div class="heroLogo">
+      <img src="@/assets/img/logo_box.png" alt="" />
+    </div>
     <h1>Une nouvelle façon de vivre une expérience avec vos commerçants</h1>
     <div class="heroText">
       <p>
@@ -21,6 +24,11 @@
 <style lang="scss" scoped>
 .heroRoot {
   padding: 42px 24px;
+}
+.heroLogo {
+  max-width: 200px;
+  margin: 0 auto;
+  margin-bottom: 32px;
 }
 h1 {
   color: $primary;
