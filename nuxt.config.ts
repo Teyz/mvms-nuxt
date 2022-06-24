@@ -16,6 +16,8 @@ export default defineNuxtConfig({
   plugins: [
     { src: "~/plugin/aos", mode: "client", ssr: false },
     { src: "~/plugin/star-rating", mode: "client", ssr: false },
+    { src: "~/plugin/veevalidate-components", mode: "client", ssr: false },
+    { src: "~/plugin/veevalidate-rules", mode: "client", ssr: false },
   ],
   resolve: {
     alias: [

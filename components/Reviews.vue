@@ -1,6 +1,6 @@
 <template>
   <section class="reviewSection">
-    <h2>Partagez-nous <span>votre avis</span></h2>
+    <h2>Un avis sur <span>votre box ?</span></h2>
     <hr class="orangeLine" />
     <div class="reviewHeader">
       <div class="starHeader">
@@ -145,6 +145,13 @@ export default defineComponent({
     .starsAverage {
       color: #8797a6;
     }
+    .vue-star-rating {
+      justify-content: center;
+      @include above(small) {
+        justify-content: flex-start;
+      }
+    }
+
     .addReview {
       width: auto;
       font-size: 16px;
