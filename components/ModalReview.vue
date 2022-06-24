@@ -12,7 +12,7 @@
         alt=""
         class="avatar"
       />
-      <h2>Qu’avez-vous pensé de <span>Goûts Malins</span> ?</h2>
+      <h2>Qu’avez-vous pensé de <span>votre box</span> ?</h2>
       <hr class="orangeLine" />
       <VForm @submit="addReview" class="modalForm">
         <div class="stars">
@@ -282,12 +282,19 @@ export default defineComponent({
       display: flex;
       justify-content: flex-start;
       margin: 20px 0;
+      flex-wrap: wrap;
       input {
         margin-right: 15px;
+      }
+      span[role="alert"] {
+        width: 100%;
       }
     }
     .addReview {
       margin: 0 auto;
+    }
+    span[role="alert"] {
+      color: #ff546d;
     }
   }
 }
