@@ -506,6 +506,11 @@
     vite-node "^0.14.2"
     vite-plugin-checker "^0.4.6"
 
+"@nuxtjs/robots@^2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/robots/-/robots-2.5.0.tgz#a42b25e3bc58181cb2a8fbd30d6b0fee6c36bc60"
+  integrity sha512-z1F3HXb05NiZga8Cuq6k5bbowfJOScPtbSOakip0nege+1aI9pGoajzap8eR5s1qwLXAk9Ts+NcgetoUn5lwrQ==
+
 "@nuxtjs/supabase@^0.1.17":
   version "0.1.17"
   resolved "https://registry.yarnpkg.com/@nuxtjs/supabase/-/supabase-0.1.17.tgz#e291c037f89f29e21316311aa07e3a5ac382c6d2"

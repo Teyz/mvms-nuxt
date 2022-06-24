@@ -3,7 +3,7 @@ const path = require("path");
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/supabase"],
+  modules: ["@nuxtjs/supabase", "@nuxtjs/robots"],
   vite: {
     css: {
       preprocessorOptions: {
@@ -32,6 +32,35 @@ export default defineNuxtConfig({
       shouldPreload: (file, type) => {
         return ["script", "style", "font"].includes(type);
       },
+    },
+  },
+  app: {
+    head: {
+      meta: [
+        {
+          name: "title",
+          content: "NFTERS - Discover, and collect Digital Art NFTs",
+        },
+        {
+          name: "description",
+          content:
+            "NFTERS is a NFT marketplace powered by Ethereum. Join us and upload / buy your first NFT.",
+        },
+        {
+          hid: "og:title",
+          name: "og:title",
+          content: "NFTERS - Discover, and collect Digital Art NFTs",
+        },
+        {
+          name: "description",
+          property: "og:description",
+          content:
+            "NFTERS is a NFT marketplace powered by Ethereum. Join us and upload / buy your first NFT.",
+        },
+      ],
+      link: [
+        { rel: "icon", type: "image/x-icon", href: "/static/favicon.ico" },
+      ],
     },
   },
 });
