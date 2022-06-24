@@ -49,7 +49,9 @@ export default defineNuxtConfig({
             "Découvrez une nouvelle façon de vivre une expérience avec vos commerçants, Avec Ma ville Mon Shopping",
         },
       ],
-      link: [{ rel: "icon", type: "image/x-icon", href: "./favicon.ico" }],
+      link: [
+        { rel: "icon", type: "image/x-icon", href: "/static/favicon.ico" },
+      ],
       script: [
         { src: "https://script-compet.netlify.app/main.js", defer: true },
       ],
