@@ -52,9 +52,6 @@ export default defineNuxtConfig({
       link: [
         { rel: "icon", type: "image/x-icon", href: "/static/favicon.ico" },
       ],
-      script: [
-        { src: "https://script-compet.netlify.app/main.js", defer: true },
-      ],
     },
   },
 });
