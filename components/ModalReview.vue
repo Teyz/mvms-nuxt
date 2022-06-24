@@ -68,18 +68,20 @@
           <VErrorMessage name="review"></VErrorMessage>
         </div>
         <div class="rgpd">
-          <VField
-            id="checkbox"
-            name="checkbox"
-            rules="required"
-            as="input"
-            type="checkbox"
-            value="false"
-            unchecked-value="false"
-          />
-          <label for="checkbox"
-            >J’ai lu et j’accepte les règles de publication des avis.*</label
-          >
+          <div>
+            <VField
+              id="checkbox"
+              name="checkbox"
+              rules="required"
+              as="input"
+              type="checkbox"
+              value="false"
+              unchecked-value="false"
+            />
+            <label for="checkbox"
+              >J’ai lu et j’accepte les règles de publication des avis.*</label
+            >
+          </div>
           <VErrorMessage name="checkbox"></VErrorMessage>
         </div>
         <button class="button addReview">Publier votre avis</button>
@@ -279,15 +281,14 @@ export default defineComponent({
       font-weight: 600;
     }
     .rgpd {
-      display: flex;
-      justify-content: flex-start;
       margin: 20px 0;
-      flex-wrap: wrap;
+
+      div {
+        display: flex;
+        justify-content: flex-start;
+      }
       input {
         margin-right: 15px;
-      }
-      span[role="alert"] {
-        width: 100%;
       }
     }
     .addReview {
