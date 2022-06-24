@@ -62,11 +62,17 @@
             cols=""
             placeholder="Pour vous aider :
 - Expliquez-nous pourquoi vous avez mis cette note ?
-- Qu’avez-vous préféré de cette boutique ?
+- Qu’avez-vous préféré de cette box ?
 - La recommanderiez-vous à vos proches ?"
           />
           <VErrorMessage name="review"></VErrorMessage>
+          <span class="reviewMaxHelper">(1500 caractères max)</span>
         </div>
+        <span class="rgpdHelper"
+          >Seul votre prénom et la première lettre de votre nom de famille
+          seront affichés lors de la publication de votre avis, s’ils sont
+          renseignés dans votre profil client.</span
+        >
         <div class="rgpd">
           <div>
             <VField
@@ -193,7 +199,7 @@ export default defineComponent({
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: -50px;
+    top: -40px;
   }
   .orangeLine {
     width: 80px;
@@ -269,6 +275,7 @@ export default defineComponent({
         }
       }
     }
+
     textarea {
       box-sizing: border-box;
       background: #ffffff;
@@ -279,6 +286,15 @@ export default defineComponent({
     }
     label {
       font-weight: 600;
+    }
+    .reviewMaxHelper {
+      color: #b2b8d4;
+      font-size: 10px;
+    }
+    .rgpdHelper {
+      font-size: 10px;
+      color: #8797a6;
+      margin-top: 14px;
     }
     .rgpd {
       margin: 20px 0;
