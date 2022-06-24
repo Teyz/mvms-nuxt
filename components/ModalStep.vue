@@ -3,7 +3,7 @@
     <div class="modalStepContainer">
       <img
         src="@/assets/img/svg/close.svg"
-        alt=""
+        alt="bouton close"
         class="closeIcon"
         @click="closeModal"
       />
@@ -13,16 +13,20 @@
           <div class="modalStepHeader">
             <img
               src="@/assets/img/avatar-cityzen-fond-blanc.png"
-              alt=""
+              alt="avatar"
               class="avatar"
             />
             <div class="modalReviews">
               <h2>Goûts Malins</h2>
               <p>...</p>
-              <img src="@/assets/img/reviews.png" alt="" class="reviews" />
+              <img
+                src="@/assets/img/reviews.png"
+                alt="review"
+                class="reviews"
+              />
               <img
                 src="@/assets/img/reviews-left.png"
-                alt=""
+                alt="review"
                 class="reviews-left"
               />
             </div>
@@ -31,12 +35,12 @@
           <div class="imageRoot">
             <img
               src="@/assets/img/etalage-saucissons.png"
-              alt=""
+              alt="saucission étalage"
               class="saucissonImage"
             />
             <img
               src="@/assets/img/etalage-saucissons-planche.png"
-              alt=""
+              alt="saucission étalage"
               class="saucissonImage second"
             />
           </div>
@@ -57,7 +61,7 @@
           <p class="description">Dans votre box</p>
           <img
             src="@/assets/img/saucissons-au-choix.png"
-            alt=""
+            alt="saucissons au choix"
             class="saucissonImage"
           />
           <div class="title">

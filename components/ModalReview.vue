@@ -2,14 +2,14 @@
   <div class="modalReviewRoot" ref="target">
     <img
       src="@/assets/img/svg/close.svg"
-      alt=""
+      alt="bouton close"
       class="closeIcon"
       @click="closeModal"
     />
     <div class="modalReviewContent">
       <img
         src="@/assets/img/avatar-cityzen-fond-blanc.png"
-        alt=""
+        alt="avatar"
         class="avatar"
       />
       <h2>Qu’avez-vous pensé de <span>votre box</span> ?</h2>

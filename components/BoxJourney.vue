@@ -39,13 +39,13 @@
         <div class="imageRoot">
           <img
             src="@/assets/img/marqueur.png"
-            alt=""
+            alt="marqueur"
             class="stepPopup"
             @click="togglePopup"
           />
           <img
             src="@/assets/img/boucherie.png"
-            alt=""
+            alt="boucherie"
             class="stepImage"
             @click="togglePopup"
           />
@@ -82,13 +82,13 @@
       <div class="thirdStepRoot">
         <img
           src="@/assets/img/marqueur.png"
-          alt=""
+          alt="marqueur"
           class="stepPopup"
           @click="togglePopup"
         />
         <img
           src="@/assets/img/fromagerie.png"
-          alt=""
+          alt="fromagerie"
           class="stepImage"
           @click="togglePopup"
         />
@@ -96,13 +96,13 @@
       <div class="fourthStepRoot">
         <img
           src="@/assets/img/marqueur.png"
-          alt=""
+          alt="marqueur"
           class="stepPopup"
           @click="togglePopup"
         />
         <img
           src="@/assets/img/caviste.png"
-          alt=""
+          alt="caviste"
           class="stepImage"
           @click="togglePopup"
         />
@@ -110,19 +110,19 @@
       <div class="fifthStepRoot">
         <img
           src="@/assets/img/marqueur.png"
-          alt=""
+          alt="marqueur"
           class="stepPopup"
           @click="togglePopup"
         />
         <img
           src="@/assets/img/commerce.png"
-          alt=""
+          alt="commerce"
           class="stepImage"
           @click="togglePopup"
         />
       </div>
       <div class="finalStepRoot">
-        <img src="@/assets/img/succes.png" alt="" class="stepImage" />
+        <img src="@/assets/img/succes.png" alt="succes" class="stepImage" />
       </div>
     </div>
     <transition name="fade">
